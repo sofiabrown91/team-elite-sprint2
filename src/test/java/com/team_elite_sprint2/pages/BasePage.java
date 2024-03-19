@@ -22,6 +22,9 @@ public abstract class BasePage {
     @FindBy(css = "span.title-level-1")
     public List<WebElement> menuOptions;
 
+    @FindBy(xpath = "(//a[@href='/calendar/event'])[3]")
+    public WebElement calendarEventsLink;
+
     @FindBy(css = "div[class='loader-mask shown']")
     @CacheLookup
     protected WebElement loaderMask;
@@ -37,6 +40,8 @@ public abstract class BasePage {
 
     @FindBy(linkText = "My User")
     public WebElement myUser;
+
+
 
     public BasePage() {
         PageFactory.initElements(Driver.getDriver(), this);

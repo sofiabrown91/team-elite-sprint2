@@ -203,6 +203,15 @@ public class BrowserUtils {
         return wait.until(ExpectedConditions.visibilityOf(element));
     }
 
+
+    public static void waitForVisibilityOfElements(List<WebElement> targets){
+        //Create the object of "WebDriverWait" class, and set up the constructor args
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+
+        //use the 'wait' object with the proper syntax to create explicit wait conditions
+        wait.until(ExpectedConditions.visibilityOfAllElements(targets));
+    }
+
     /**
      * Waits for element matching the locator to be visible on the page
      *
