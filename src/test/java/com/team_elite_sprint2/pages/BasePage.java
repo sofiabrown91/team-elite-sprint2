@@ -85,7 +85,7 @@ public abstract class BasePage {
         try {
             BrowserUtils.waitForClickablility(By.xpath(tabLocator), 5);
             WebElement tabElement = Driver.getDriver().findElement(By.xpath(tabLocator));
-            new Actions(Driver.getDriver()).moveToElement(tabElement).pause(200).doubleClick(tabElement).build().perform();
+            new Actions(Driver.getDriver()).moveToElement(tabElement).pause(200).moveToElement(tabElement).build().perform();
         } catch (Exception e) {
             BrowserUtils.clickWithWait(By.xpath(tabLocator), 5);
         }
