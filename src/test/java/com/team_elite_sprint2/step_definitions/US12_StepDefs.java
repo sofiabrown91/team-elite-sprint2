@@ -1,19 +1,15 @@
 package com.team_elite_sprint2.step_definitions;
 
 import com.team_elite_sprint2.pages.AccountsPage;
-import com.team_elite_sprint2.pages.BasePage;
 import com.team_elite_sprint2.utilities.BrowserUtils;
-import com.team_elite_sprint2.utilities.Driver;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class FilterVerificationStep_definitions {
+public class US12_StepDefs {
     AccountsPage accountsPage = new AccountsPage();
 
     @When("user hover over on Customers and clicks Accounts")
