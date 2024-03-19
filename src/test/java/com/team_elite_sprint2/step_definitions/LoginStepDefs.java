@@ -1,10 +1,22 @@
 package com.team_elite_sprint2.step_definitions;
 
+import com.team_elite_sprint2.pages.BasePage;
 import com.team_elite_sprint2.pages.LoginPage;
+import com.team_elite_sprint2.utilities.BrowserUtils;
 import com.team_elite_sprint2.utilities.ConfigurationReader;
+import com.team_elite_sprint2.utilities.Driver;
 import io.cucumber.java.en.Given;
-public class LoginStepDefs {
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import org.junit.Assert;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
+
+public class LoginStepDefs extends BasePage{
 
     @Given("the user is on the login page")
     public void the_user_is_on_the_login_page() {
@@ -39,6 +51,49 @@ public class LoginStepDefs {
 
 
 
+    @Then("the user should see the following options")
+    public void the_user_should_see_the_following_options(List<String> expectedTopModules) {
 
+        LoginStepDefs dashboardPage = new LoginStepDefs();
+
+
+            BrowserUtils.waitForTitleContains("Dashboard");
+
+            List<String> actualTopModules = new ArrayList<>();
+
+            for (WebElement eachTopModule : dashboardPage.menuOptions) {
+                actualTopModules.add(eachTopModule.getText());
+
+            }
+
+            Assert.assertEquals(expectedTopModules,actualTopModules);
+
+        }
+
+
+    @Then("user should see the following options")
+    public void user_should_see_the_following_options(List<String> expectedTopModules){
+
+
+        LoginStepDefs dashboardPage = new LoginStepDefs();
+
+
+        BrowserUtils.waitFor(10);
+
+        List<String> actualTopModules = new ArrayList<>();
+
+        for (WebElement eachTopModule : dashboardPage.menuOptions) {
+            actualTopModules.add(eachTopModule.getText());
+
+        }
+
+        Assert.assertEquals(actualTopModules,expectedTopModules);
+
+
+
+    }
 
 }
+
+
+
