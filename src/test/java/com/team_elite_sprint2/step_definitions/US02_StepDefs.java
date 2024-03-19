@@ -8,7 +8,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class US01_StepDefs extends BasePage {
+public class US02_StepDefs extends BasePage {
     DashboardPage dashboardPage = new DashboardPage();
     @Given("user is on the login page")
     public void user_is_on_the_login_page() {
