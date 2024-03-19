@@ -6,13 +6,12 @@ import com.team_elite_sprint2.pages.CreateCalendarEventPage;
 import com.team_elite_sprint2.utilities.BrowserUtils;
 import com.team_elite_sprint2.utilities.Driver;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 
-public class US_10_StepDefs extends BasePage {
+public class US10_StepDefs extends BasePage {
 
     CalendarEventsPage calendarEventsPage = new CalendarEventsPage();
     CreateCalendarEventPage createCalendarEventPage = new CreateCalendarEventPage();
