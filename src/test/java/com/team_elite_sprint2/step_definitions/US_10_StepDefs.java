@@ -19,7 +19,7 @@ public class US_10_StepDefs extends BasePage {
 
     @When("User navigate to Activities")
     public void user_navigate_to_activities() {
-       BrowserUtils.waitForVisibilityOfElements(menuOptions);
+        waitUntilLoaderScreenDisappear();
         for (WebElement eachOption : menuOptions) {
             if(eachOption.getText().contains("Activities")){
                 eachOption.click();
@@ -27,16 +27,15 @@ public class US_10_StepDefs extends BasePage {
             }
         }
     }
-
     @And("User selects the Calendar Events")
     public void user_selects_the_calendar_events() {
-        //BrowserUtils.waitForClickablility(calendarEventsLink, 10);
+        BrowserUtils.waitForClickablility(calendarEventsLink, 20);
         calendarEventsLink.click();
     }
 
     @And("User clicks on the Create Calendar Event button")
     public void user_clicks_on_the_create_calendar_event_button() {
-        //BrowserUtils.waitForClickablility(calendarEventsPage.createCalendarEventBtn, 10);
+        BrowserUtils.waitForClickablility(calendarEventsPage.createCalendarEventBtn, 20);
         calendarEventsPage.createCalendarEventBtn.click();
     }
 
