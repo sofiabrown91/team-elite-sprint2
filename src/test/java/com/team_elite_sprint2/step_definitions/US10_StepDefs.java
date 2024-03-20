@@ -16,8 +16,8 @@ public class US10_StepDefs extends BasePage {
     CalendarEventsPage calendarEventsPage = new CalendarEventsPage();
     CreateCalendarEventPage createCalendarEventPage = new CreateCalendarEventPage();
 
-    @When("User navigate to Activities")
-    public void user_navigate_to_activities() {
+    @When("User navigates to Activities")
+    public void user_navigates_to_activities() {
         waitUntilLoaderScreenDisappear();
         for (WebElement eachOption : menuOptions) {
             if(eachOption.getText().contains("Activities")){
