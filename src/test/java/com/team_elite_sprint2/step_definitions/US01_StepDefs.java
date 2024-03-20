@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class US01_MainModulesStepDefs {
+public class US01_StepDefs {
 
     // This snippet is take care of users sales manager and store manager verifications of menu option's visibility.
 
