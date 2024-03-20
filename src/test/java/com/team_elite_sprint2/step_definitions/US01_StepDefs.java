@@ -12,20 +12,20 @@ public class US01_StepDefs {
 
     DashboardMenuOptionsPage dashboardPage = new DashboardMenuOptionsPage();
 
-    @Then("the user should see the following options")
+    @Then("the user should see the following options") // Verification Top Modules options for Store Manager and Sales Manager users
     public void verifyMenuOptionsVisibility(List<String> expectedTopModules) {
         BrowserUtils.waitForTitleContains("Dashboard");
         verifyMenuOptions(expectedTopModules);
 
     }
 
-    @Then("user should see the following options")
+    @Then("user should see the following options") // Verification Top Modules options for Driver user
     public void verifyMenuOptionsVisibilityForDriverUser(List<String> expectedTopModules) {
         BrowserUtils.waitFor(10);
         verifyMenuOptions(expectedTopModules);
     }
 
-    private void verifyMenuOptions(List<String> expectedTopModules) {
+    public void verifyMenuOptions(List<String> expectedTopModules) {
         List<String> actualTopModules = BrowserUtils.getElementsText(dashboardPage.menuOptions);
         Assert.assertEquals(expectedTopModules, actualTopModules);
     }
