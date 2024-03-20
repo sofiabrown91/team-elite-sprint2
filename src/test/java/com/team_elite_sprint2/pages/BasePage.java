@@ -20,6 +20,9 @@ public abstract class BasePage {
     @FindBy(css = "span.title-level-1")
     public List<WebElement> menuOptions;
 
+    @FindBy(xpath = "(//a[@href='/calendar/event'])[3]")
+    public WebElement calendarEventsLink;
+
     @FindBy(css = "div[class='loader-mask shown']")
     @CacheLookup
     protected WebElement loaderMask;
@@ -35,6 +38,8 @@ public abstract class BasePage {
 
     @FindBy(linkText = "My User")
     public WebElement myUser;
+
+
 
     public BasePage() {
         PageFactory.initElements(Driver.getDriver(), this);
@@ -83,7 +88,7 @@ public abstract class BasePage {
         try {
             BrowserUtils.waitForClickablility(By.xpath(tabLocator), 5);
             WebElement tabElement = Driver.getDriver().findElement(By.xpath(tabLocator));
-            new Actions(Driver.getDriver()).moveToElement(tabElement).pause(200).doubleClick(tabElement).build().perform();
+            new Actions(Driver.getDriver()).moveToElement(tabElement).pause(200).moveToElement(tabElement).build().perform();
         } catch (Exception e) {
             BrowserUtils.clickWithWait(By.xpath(tabLocator), 5);
         }
