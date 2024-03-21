@@ -9,12 +9,12 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 
-public class US09_StepDefs extends BasePage {
+public class US09_StepDefs {
 
     CreateCalendarEventPage createCalendarEventPage = new CreateCalendarEventPage();
     @When("User enables the Repeat checkbox")
     public void user_enables_the_repeat_checkbox() {
-        BrowserUtils.waitForClickablility(createCalendarEventPage.repeatCheckbox, 10);
+        BrowserUtils.waitForClickablility(createCalendarEventPage.repeatCheckbox, 30);
         createCalendarEventPage.repeatCheckbox.click();
     }
     @And("User enters less than one {string} in the Repeat Every input field")
@@ -30,7 +30,7 @@ public class US09_StepDefs extends BasePage {
 
     @Then("User should see the error message {string}")
     public void user_should_see_the_error_message(String expectedErrorMessage) {
-        waitUntilLoaderScreenDisappear();
+        createCalendarEventPage.waitUntilLoaderScreenDisappear();
         Assert.assertEquals(expectedErrorMessage, createCalendarEventPage.errorMsg.getText());
     }
 }
