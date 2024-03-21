@@ -27,6 +27,7 @@ public class US05_StepDefs extends BasePage {
     @And("user hovers on Fleet dropdown on dashboard and user selects Vehicles Model")
     public void userHoversOnFleetDropdownOnDashboardAndUserSelectsVehiclesModel() {
       navigateToModule("Fleet" ,"Vehicles Model");
+        //BrowserUtils.sleep(5);
         BrowserUtils.sleep(5);
 
     }
