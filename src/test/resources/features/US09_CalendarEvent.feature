@@ -5,10 +5,8 @@ Background:
   Given the user is on the login page
   @less
   Scenario Outline: US09AC01TC02 Verify that users see error messages when enter invalid integers (less than 1)
-
     Given the user logged in with username as "<username>" and password as "<password>"
-    When User navigates to Activities
-    And User selects the Calendar Events
+    When user hover over on "Activities" and clicks "Calendar Events"
     And User clicks on the Create Calendar Event button
     And User enables the Repeat checkbox
     And User enters less than one "<incorrect value>" in the Repeat Every input field
@@ -22,8 +20,7 @@ Background:
     @more
   Scenario Outline: US09AC01TC03 Verify that users see error messages when enter invalid integers (more than 99)
     Given the user logged in with username as "<username>" and password as "<password>"
-    When User navigates to Activities
-    And User selects the Calendar Events
+    When user hover over on "Activities" and clicks "Calendar Events"
     And User clicks on the Create Calendar Event button
     And User enables the Repeat checkbox
     And User enters more than ninety-nine "<incorrect value>" in the Repeat Every input field
