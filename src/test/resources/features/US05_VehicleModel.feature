@@ -1,6 +1,6 @@
 @B32G14-208
 Feature: Default
-
+VehicleMode
 
 	@B32G14-204
 	Scenario: US05_AC01_TC01_Verify that the Store manager and Sales manager can see 10 columns on the Vehicles Model page.

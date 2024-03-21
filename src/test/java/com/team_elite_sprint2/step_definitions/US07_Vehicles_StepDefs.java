@@ -9,7 +9,7 @@ import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 
-public class US07_Bilgehan_StepDefs extends BasePage {
+public class US07_Vehicles_StepDefs extends BasePage {
     US07_VehiclesPage_Bilgehan vehiclePage = new US07_VehiclesPage_Bilgehan();
 
     @And("user hovers on Fleet dropdown on dashboard and user selects Vehicles")
