@@ -1,8 +1,6 @@
 package com.team_elite_sprint2.pages;
 
 
-
-
 import com.team_elite_sprint2.utilities.BrowserUtils;
 import com.team_elite_sprint2.utilities.Driver;
 import org.openqa.selenium.By;
@@ -22,6 +20,9 @@ public abstract class BasePage {
     @FindBy(css = "span.title-level-1")
     public List<WebElement> menuOptions;
 
+    @FindBy(xpath = "(//a[@href='/calendar/event'])[3]")
+    public WebElement calendarEventsLink;
+
     @FindBy(css = "div[class='loader-mask shown']")
     @CacheLookup
     protected WebElement loaderMask;
@@ -38,13 +39,15 @@ public abstract class BasePage {
     @FindBy(linkText = "My User")
     public WebElement myUser;
 
+
+
     public BasePage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
 
     /**
-     * @return page name, for example: Dashboard
+     * @return page name, for example, Dashboard
      */
     public String getPageSubTitle() {
         //ant time we are verifying page name, or page subtitle, loader mask appears
@@ -56,7 +59,7 @@ public abstract class BasePage {
 
     /**
      * Waits until loader screen present. If loader screen will not pop up at all,
-     * NoSuchElementException will be handled  bu try/catch block
+     * NoSuchElementException will be handled by try/catch block
      * Thus, we can continue in any case.
      */
     public void waitUntilLoaderScreenDisappear() {
@@ -72,8 +75,8 @@ public abstract class BasePage {
 
 
     /**
-     * This method will navigate user to the specific module in vytrack application.
-     * For example: if tab is equals to Activities, and module equals to Calls,
+     * This method will navigate user to the specific module in navtrack application.
+     * For example, if tab is equals to Activities, and module equals to Calls,
      * Then method will navigate user to this page: http://qa2.vytrack.com/call/
      *
      * @param tab
@@ -85,7 +88,7 @@ public abstract class BasePage {
         try {
             BrowserUtils.waitForClickablility(By.xpath(tabLocator), 5);
             WebElement tabElement = Driver.getDriver().findElement(By.xpath(tabLocator));
-            new Actions(Driver.getDriver()).moveToElement(tabElement).pause(200).doubleClick(tabElement).build().perform();
+            new Actions(Driver.getDriver()).moveToElement(tabElement).pause(200).moveToElement(tabElement).build().perform();
         } catch (Exception e) {
             BrowserUtils.clickWithWait(By.xpath(tabLocator), 5);
         }
