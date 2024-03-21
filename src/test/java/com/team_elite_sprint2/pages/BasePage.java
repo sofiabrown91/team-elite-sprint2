@@ -1,8 +1,6 @@
 package com.team_elite_sprint2.pages;
 
 
-
-
 import com.team_elite_sprint2.utilities.BrowserUtils;
 import com.team_elite_sprint2.utilities.Driver;
 import org.openqa.selenium.By;
@@ -49,7 +47,7 @@ public abstract class BasePage {
 
 
     /**
-     * @return page name, for example: Dashboard
+     * @return page name, for example, Dashboard
      */
     public String getPageSubTitle() {
         //ant time we are verifying page name, or page subtitle, loader mask appears
@@ -61,7 +59,7 @@ public abstract class BasePage {
 
     /**
      * Waits until loader screen present. If loader screen will not pop up at all,
-     * NoSuchElementException will be handled  bu try/catch block
+     * NoSuchElementException will be handled by try/catch block
      * Thus, we can continue in any case.
      */
     public void waitUntilLoaderScreenDisappear() {
@@ -77,8 +75,8 @@ public abstract class BasePage {
 
 
     /**
-     * This method will navigate user to the specific module in vytrack application.
-     * For example: if tab is equals to Activities, and module equals to Calls,
+     * This method will navigate user to the specific module in navtrack application.
+     * For example, if tab is equals to Activities, and module equals to Calls,
      * Then method will navigate user to this page: http://qa2.vytrack.com/call/
      *
      * @param tab

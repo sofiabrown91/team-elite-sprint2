@@ -6,7 +6,7 @@ import java.util.Properties;
 
 public class ConfigurationReader {
 
-    //1- Create the Properties object (create object)
+    //1- Create the Properties object (create an object)
     //make it "private" so we are limiting access to the object
     //"static" is to make sure its created and loaded before everything else.
     private static Properties properties = new Properties();

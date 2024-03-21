@@ -1,8 +1,6 @@
 package com.team_elite_sprint2.step_definitions;
 
 
-
-
 import com.team_elite_sprint2.utilities.BrowserUtils;
 import com.team_elite_sprint2.utilities.ConfigurationReader;
 import com.team_elite_sprint2.utilities.Driver;
@@ -15,7 +13,7 @@ import org.openqa.selenium.TakesScreenshot;
 import java.time.Duration;
 
 /*
-In this class we will be able to create "pre" and "post" condition
+In this class, we will be able to create "pre" and "post" condition
 for ALL the SCENARIOS and even STEPS.
  */
 public class Hooks {
@@ -46,7 +44,6 @@ public class Hooks {
             scenario.attach(screenshot, "image/png", scenario.getName());
 
         }
-
 
 
         BrowserUtils.sleep(2);
