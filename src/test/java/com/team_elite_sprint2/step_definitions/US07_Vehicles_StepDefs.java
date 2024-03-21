@@ -1,6 +1,7 @@
 package com.team_elite_sprint2.step_definitions;
 
 import com.team_elite_sprint2.pages.BasePage;
+import com.team_elite_sprint2.pages.LoginPage;
 import com.team_elite_sprint2.pages.US07_VehiclesPage_Bilgehan;
 import com.team_elite_sprint2.utilities.BrowserUtils;
 import io.cucumber.java.en.And;
@@ -11,6 +12,12 @@ import org.openqa.selenium.WebElement;
 
 public class US07_Vehicles_StepDefs extends BasePage {
     US07_VehiclesPage_Bilgehan vehiclePage = new US07_VehiclesPage_Bilgehan();
+    LoginPage login = new LoginPage();
+
+    @Given("User is logged in as {string} and {string}")
+    public void userIsLoggedInAsAnd(String username, String password) {
+        login.login(username , password);
+    }
 
     @And("user hovers on Fleet dropdown on dashboard and user selects Vehicles")
     public void userHoversOnFleetDropdownOnDashboardAndUserSelectsVehicles() {
@@ -53,6 +60,7 @@ public class US07_Vehicles_StepDefs extends BasePage {
            }
         }
     }
+
 
 
 }
