@@ -11,26 +11,10 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 
-public class US10_StepDefs extends BasePage {
+public class US10_StepDefs {
 
     CalendarEventsPage calendarEventsPage = new CalendarEventsPage();
     CreateCalendarEventPage createCalendarEventPage = new CreateCalendarEventPage();
-
-    @When("User navigates to Activities")
-    public void user_navigates_to_activities() {
-        waitUntilLoaderScreenDisappear();
-        for (WebElement eachOption : menuOptions) {
-            if(eachOption.getText().contains("Activities")){
-                eachOption.click();
-                break;
-            }
-        }
-    }
-    @And("User selects the Calendar Events")
-    public void user_selects_the_calendar_events() {
-        BrowserUtils.waitForClickablility(calendarEventsLink, 20);
-        calendarEventsLink.click();
-    }
 
     @And("User clicks on the Create Calendar Event button")
     public void user_clicks_on_the_create_calendar_event_button() {
