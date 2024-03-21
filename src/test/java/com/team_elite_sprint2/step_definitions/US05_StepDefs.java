@@ -13,7 +13,7 @@ import org.openqa.selenium.WebElement;
 
 import java.util.*;
 
-public class US05_VehicleModel_StepDefs extends BasePage {
+public class US05_StepDefs extends BasePage {
 
     US05_VehiclesModelPage_Bilgehan modelPage = new US05_VehiclesModelPage_Bilgehan();
     LoginPage loginPage = new LoginPage();
