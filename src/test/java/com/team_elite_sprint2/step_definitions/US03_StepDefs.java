@@ -5,7 +5,7 @@ import com.team_elite_sprint2.pages.PinbarPage;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 
-public class US03_StepDef {
+public class US03_StepDefs {
 
     PinbarPage pinbarPage = new PinbarPage();
 
