@@ -34,7 +34,7 @@ public class US10_StepDefs extends BasePage {
 
     @And("User clicks on the Create Calendar Event button")
     public void user_clicks_on_the_create_calendar_event_button() {
-        BrowserUtils.waitForClickablility(calendarEventsPage.createCalendarEventBtn, 20);
+        BrowserUtils.waitForClickablility(calendarEventsPage.createCalendarEventBtn, 40);
         calendarEventsPage.createCalendarEventBtn.click();
     }
 

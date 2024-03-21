@@ -12,6 +12,7 @@ public class US01_StepDefs {
 
     DashboardMenuOptionsPage dashboardPage = new DashboardMenuOptionsPage();
 
+
     @Then("the user should see the following options") // Verification Top Modules options for Store Manager and Sales Manager users
     public void verifyMenuOptionsVisibility(List<String> expectedTopModules) {
         BrowserUtils.waitForTitleContains("Dashboard");
@@ -30,4 +31,5 @@ public class US01_StepDefs {
         Assert.assertEquals(expectedTopModules, actualTopModules);
     }
 
-}
+    }
+

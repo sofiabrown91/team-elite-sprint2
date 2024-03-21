@@ -2,19 +2,11 @@ package com.team_elite_sprint2.step_definitions;
 
 import com.team_elite_sprint2.pages.BasePage;
 import com.team_elite_sprint2.pages.LoginPage;
-import com.team_elite_sprint2.utilities.BrowserUtils;
 import com.team_elite_sprint2.utilities.ConfigurationReader;
-import com.team_elite_sprint2.utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Assert;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
-import java.util.ArrayList;
-import java.util.List;
 
 public class LoginStepDefs extends BasePage {
 
@@ -26,8 +18,8 @@ public class LoginStepDefs extends BasePage {
     @Given("the user logged in as {string}")
     public void the_user_logged_in_as(String userType) {
         //based on input enter that user information
-        String username = null;
-        String password = null;
+        String username = userType;
+        String password = userType;
 
         if (userType.equalsIgnoreCase("driver")) {
             username = ConfigurationReader.getProperty("driver_username");
@@ -48,6 +40,7 @@ public class LoginStepDefs extends BasePage {
         LoginPage loginPage = new LoginPage();
         loginPage.login(username, password);
     }
+
 
 }
 
