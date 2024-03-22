@@ -39,11 +39,15 @@ public abstract class BasePage {
     @FindBy(linkText = "My User")
     public WebElement myUser;
 
+    @FindBy(xpath = "//div[contains(text(), 'You do not have')]")
+    public WebElement errorMessage;
+
 
 
     public BasePage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
+
 
 
     /**
