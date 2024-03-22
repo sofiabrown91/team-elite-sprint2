@@ -8,7 +8,6 @@ import java.util.List;
 public class CampaignPage extends MarketingFilterPage{
 
 
-
     @FindBy(xpath = "//a[@class='add-filter-button']")
     public WebElement manageFiltersAddFilterButton;
 
@@ -16,7 +15,6 @@ public class CampaignPage extends MarketingFilterPage{
     public WebElement btn_filter;
 
 
-    @FindBy(xpath = "//input[@name='multiselect_0']")
+    @FindBy(xpath = "//input[contains(@id,'ui-multiselect')] ")
     public List<WebElement> filters;
-
 }

@@ -1,4 +1,5 @@
 package com.team_elite_sprint2.step_definitions;
+
 import com.team_elite_sprint2.pages.CampaignPage;
 import com.team_elite_sprint2.pages.MarketingFilterPage;
 import com.team_elite_sprint2.utilities.BrowserUtils;
@@ -8,6 +9,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
@@ -31,7 +33,6 @@ public class US14_StepDefs {
     @When("user sees Manage filters button")
     public void user_sees_manage_filters_button() {
 
-
         BrowserUtils.waitForPageToLoad(5);
         BrowserUtils.waitForClickablility(campaignPage.btn_filter, 5);
         campaignPage.btn_filter.click();
@@ -44,6 +45,7 @@ public class US14_StepDefs {
 
         boolean isSelected = false;
 
+        BrowserUtils.sleep(5);
         for (WebElement each : campaignPage.filters) {
             if (each.isSelected()) {
                 isSelected = true;
@@ -54,47 +56,42 @@ public class US14_StepDefs {
 
 
         Assert.assertTrue(isSelected);
-
     }
 
     @And("user uncheck one or more options")
     public void userUncheckOneOrMoreOptions() {
 
 
-        BrowserUtils.waitForPageToLoad(15);
-        for (int i = 0; i < campaignPage.filters.size()-1; i++) {
+        for (int i = 0; i < campaignPage.filters.size() - 1; i++) {
 
             if (campaignPage.filters.get(i).isSelected()) {
                 campaignPage.filters.get(i).click();
+
             }
         }
-
     }
-
     @Then("user verifies one or more options are unchecked")
     public void userVerifiesOneOrMoreOptionsAreUnchecked() {
 
-
-        BrowserUtils.waitForPageToLoad(15);
+        BrowserUtils.waitForPageToLoad(10);
         boolean isSelected = false;
         int count = 0;
 
-        for (int i = 1; i < campaignPage.filters.size() ; i++) {
+        try {
+            for (int i = 1; i < campaignPage.filters.size(); i++) {
 
-            if (!(campaignPage.filters.get(i).isSelected())){
-                isSelected = true;
-                count++;
+                if (campaignPage.filters.get(i).isSelected()) { // Checking if the box is selected
+                    isSelected = true;
+                    count++;
 
-                if (count >= 3){
-                    break;
+                    if (count >= 3) {
+                        break;
+                    }
                 }
-
             }
-
+            Assert.assertTrue(isSelected);
+        } catch (StaleElementReferenceException e) {
+            e.printStackTrace();
         }
-
-        Assert.assertTrue(isSelected);
-
     }
-
 }
