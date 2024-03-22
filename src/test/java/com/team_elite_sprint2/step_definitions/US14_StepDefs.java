@@ -27,6 +27,7 @@ public class US14_StepDefs {
         BrowserUtils.waitForClickablility(marketingFilterPage.marketingDropDown, 5);
         Actions action = new Actions(Driver.getDriver());
         action.moveToElement(marketingFilterPage.marketingDropDown).perform();
+        BrowserUtils.sleep(1);
         marketingFilterPage.campaignMenu.click();
     }
 
@@ -45,7 +46,7 @@ public class US14_StepDefs {
 
         boolean isSelected = false;
 
-        BrowserUtils.sleep(5);
+        BrowserUtils.sleep(2);
         for (WebElement each : campaignPage.filters) {
             if (each.isSelected()) {
                 isSelected = true;
@@ -66,6 +67,7 @@ public class US14_StepDefs {
 
             if (campaignPage.filters.get(i).isSelected()) {
                 campaignPage.filters.get(i).click();
+                BrowserUtils.sleep(2);
 
             }
         }
