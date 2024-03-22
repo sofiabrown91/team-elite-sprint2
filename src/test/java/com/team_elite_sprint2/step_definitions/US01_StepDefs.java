@@ -3,6 +3,7 @@ package com.team_elite_sprint2.step_definitions;
 import com.team_elite_sprint2.pages.DashboardMenuOptionsPage;
 import com.team_elite_sprint2.utilities.BrowserUtils;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.junit.Assert;
 
 import java.util.List;
@@ -31,5 +32,5 @@ public class US01_StepDefs {
         Assert.assertEquals(expectedTopModules, actualTopModules);
     }
 
-    }
+}
 

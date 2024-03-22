@@ -1,41 +1,43 @@
-Feature: As a user I want to manage filters on the Marketing module
+@US_14
+Feature: User should be able to manage filters on the Marketing page
+
+   As a user, I want to manage filters on the Marketing page.
 
   Background: User is already in the log in page
     Given the user is on the login page
 
 
-  Scenario Outline: Verify that users see 5 columns when filtering on the All Campaigns page
-    Given the user logged in as "<userType>"
-    When user hover over on Marketing and clicks Campaigns
-    Then user should see these options on columns
-      | Name       |
-      | Code       |
-      | Start Date |
-      | End Date   |
-      | Budget     |
-    Examples:
-      | userType      |
-      | store manager |
-      | sales manager |
+
+  @US14_1_SLM
+  Scenario: Verify that once the sales manager launch on the Campaigns page under Marketing.
+    Given the user logged in as "sales manager"
+    Given the user in on the campaign page
+    When user sees Manage filters button
+    Then user verifies 5 options are checked by default
+
+  @US14_1_STM
+  Scenario: Verify that once the store manager launch on the Campaigns page under Marketing.
+    Given the user logged in as "store manager"
+    Given the user in on the campaign page
+    When user sees Manage filters button
+    Then user verifies 5 options are checked by default
+
+  @US14_2_SLM
+  Scenario: Verify that once the sales manager launch on the Campaigns page under Marketing.
+    Given the user logged in as "sales manager"
+    Given the user in on the campaign page
+    When user sees Manage filters button
+    And user uncheck one or more options
+    Then user verifies one or more options are unchecked
 
 
-  Scenario Outline: Verify that users can unchecked any amount of boxes
-    Given the user logged in as "<userType>"
-    When user hover over on Marketing and clicks on Campaigns button
-    Then user hover over on Manage filters dropdown and clicks on it
-    Then user can click on any amount of boxes and can uncheck.(Can check only 1 or multiple)
-    Examples:
-      | userType      |
-      | store manager |
-      | sales manager |
-
-
-
-
-
-
-
-
+  @US14_2_STM
+  Scenario: Verify that once the sales manager launch on the Campaigns page under Marketing.
+    Given the user logged in as "store manager"
+    Given the user in on the campaign page
+    When user sees Manage filters button
+    And user uncheck one or more options
+    Then user verifies one or more options are unchecked
 
 
 

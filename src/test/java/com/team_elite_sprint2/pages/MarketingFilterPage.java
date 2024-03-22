@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class MarketingFilterPage {
+public class MarketingFilterPage extends BasePage{
 
 
     public MarketingFilterPage() {
@@ -16,18 +16,16 @@ public class MarketingFilterPage {
 
 
 
-    @FindBy(xpath = "//div[@class='btn-group dropdown']//input")
-    public WebElement selectAllCheckbox;
-
-
-    @FindBy(xpath = "//input[@tabindex='-1']")
-    public List<WebElement> allCheckboxes;
-
-
     @FindBy(css = "span.title-level-1")
-    public List<WebElement> menuOptions;
+    public List<WebElement> mainModuleOptions;//Marketing,Sales,System...
 
-    @FindBy(xpath = "//a[@class='add-filter-button']")
-    public List<WebElement> filterOptions;
+
+
+    @FindBy(xpath = "(//span[@class='title title-level-1'])[6]")
+    public WebElement marketingDropDown;
+
+    @FindBy(xpath = "(//span[@class='title title-level-2'])[15]")
+    public WebElement campaignMenu;
 
 }
+

@@ -1,30 +1,20 @@
 package com.team_elite_sprint2.step_definitions;
 
-import com.team_elite_sprint2.pages.Vehicle_Contracts_page;
-import com.team_elite_sprint2.pages.Vehicle_Contracts_page;
-import com.team_elite_sprint2.utilities.BrowserUtils;
+
+import com.team_elite_sprint2.pages.VehicleContractsPage;
 import com.team_elite_sprint2.utilities.Driver;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.openqa.selenium.support.ui.FluentWait;
-
 
 
 import java.time.Duration;
 
 public class US04_StepDefs {
 
-    Vehicle_Contracts_page vehicleContractsPage = new Vehicle_Contracts_page();
-
+    VehicleContractsPage vehicleContractsPage = new VehicleContractsPage();
 
 
     @When("user hover over on Fleet and clicks Vehicle Contracts")
@@ -62,9 +52,6 @@ public class US04_StepDefs {
         Assert.assertEquals(expectedMessage,actualMessage);
 
 
-
     }
-
-
 
 }
