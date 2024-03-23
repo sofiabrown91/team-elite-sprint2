@@ -1,6 +1,6 @@
 package com.team_elite_sprint2.step_definitions;
 
-import com.team_elite_sprint2.pages.BasePage;
+
 import com.team_elite_sprint2.pages.LoginPage;
 import com.team_elite_sprint2.utilities.BrowserUtils;
 import com.team_elite_sprint2.utilities.ConfigurationReader;
@@ -9,18 +9,17 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-import java.util.ArrayList;
-import java.util.List;
 
-public class LoginStepDefs extends BasePage {
+
+public class LoginStepDefs {
+
+    LoginPage loginPage = new LoginPage();
 
     @Given("the user is on the login page")
     public void the_user_is_on_the_login_page() {
         System.out.println("Login to app in Before method");
+        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
     }
 
     @Given("the user logged in as {string}")
@@ -40,6 +39,7 @@ public class LoginStepDefs extends BasePage {
             password = ConfigurationReader.getProperty("store_manager_password");
         }
         //send username and password and login
+        LoginPage loginPage1 = new LoginPage();
         new LoginPage().login(username, password);
     }
 
