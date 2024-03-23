@@ -1,7 +1,7 @@
 package com.team_elite_sprint2.step_definitions;
 
-import com.team_elite_sprint2.pages.Vehicle_Contracts_page;
-import com.team_elite_sprint2.pages.Vehicle_Contracts_page;
+import com.team_elite_sprint2.pages.BasePage;
+import com.team_elite_sprint2.pages.VehicleContractsPage;
 import com.team_elite_sprint2.utilities.BrowserUtils;
 import com.team_elite_sprint2.utilities.Driver;
 import io.cucumber.java.en.Then;
@@ -21,9 +21,9 @@ import org.openqa.selenium.support.ui.FluentWait;
 
 import java.time.Duration;
 
-public class US04_StepDefs {
+public class US04_StepDefs extends BasePage {
 
-    Vehicle_Contracts_page vehicleContractsPage = new Vehicle_Contracts_page();
+    VehicleContractsPage vehicleContractsPage = new VehicleContractsPage();
 
 
 
