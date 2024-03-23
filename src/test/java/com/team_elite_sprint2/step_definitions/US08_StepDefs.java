@@ -11,11 +11,6 @@ import org.openqa.selenium.Keys;
 public class US08_StepDefs extends BasePage {
     CreateCalendarEventPage createCalendarEventPage = new CreateCalendarEventPage();
 
-//    @And("user hover over on {string} and clicks {string}")
-//    public void user_hover_over_on_and_clicks(String tab, String module) {
-//        navigateToModule(tab, module);
-//
-//    }
     @Then("User should see the number {string} by default in the Repeat Every input option")
     public void user_should_see_the_number_by_default_in_the_repeat_every_input_option(String expectedValue) {
         Assert.assertEquals(expectedValue, createCalendarEventPage.repeatEveryInputFieldValue.getAttribute("value"));
