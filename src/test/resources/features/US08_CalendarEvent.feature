@@ -16,7 +16,7 @@ Feature: Create Calendar Event page function
       | salesmanager101 | UserUser123 |
       | storemanager85  | UserUser123 |
 
-  Scenario Outline: US08AC02TC05 Verify that users see the error message "This value should not be blank." when the Calendar event Repeat Every field is cleared (delete the number 1).
+  Scenario Outline: US08AC02 TC05 Verify that users see the error message "This value should not be blank." when the Calendar event Repeat Every field is cleared (delete the number 1).
     Given the user logged in with username as "<username>" and password as "<password>"
     When user hover over on "Activities" and clicks "Calendar Events"
     And User clicks on the Create Calendar Event button
