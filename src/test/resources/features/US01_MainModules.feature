@@ -1,5 +1,17 @@
 @B32G14-193
-Feature: Default
+Feature: User should be able to see all main modules
+
+
+  @B32G14-188
+  Scenario: US01AC02TC01  Verify Menu Options for Driver.
+    Given the user logged in as "driver"
+    Then user should see the following options
+
+      | Fleet      |
+      | Customers  |
+      | Activities |
+      | System     |
+
 
 
   @B32G14-187
@@ -32,13 +44,3 @@ Feature: Default
       | System             |
 
 
-  @B32G14-188
-  Scenario: US01AC02TC01  Verify Menu Options for Driver.
-    Given the user logged in as "driver"
-
-    Then user should see the following options
-
-      | Fleet      |
-      | Customers  |
-      | Activities |
-      | System     |
