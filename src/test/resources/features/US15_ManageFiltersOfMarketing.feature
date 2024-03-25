@@ -13,7 +13,7 @@ Feature: User should be able to manage filters on the Marketing page
     Given the user logged in as "<userType>"
     Given user hover over on "Marketing" and clicks "Campaigns"
     When user sees and clicks Manage filters button
-    Then user verifies 5 options are checked by default
+    Then users verifies 5 options are checked by default
     Examples:
       | userType      |
       | store manager |
