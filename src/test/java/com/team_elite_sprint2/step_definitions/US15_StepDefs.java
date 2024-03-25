@@ -25,7 +25,7 @@ public class US15_StepDefs {
 
 
     }
-    @Then("user verifies {int} options are checked by default")
+    @Then("users verifies {int} options are checked by default")
     public void user_verifies_options_are_checked_by_default(Integer checkedOptionNumber) {
         int count = 0;
         for (WebElement eachOption : campaignsPageUS15.manageFiltersOptions) {
